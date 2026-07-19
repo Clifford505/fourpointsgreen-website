@@ -1,0 +1,81 @@
+# Four Points Green Power — Decap CMS Configuration
+# This file defines what content you can edit via the admin dashboard.
+# We'll refine this during Session 2, after Netlify Identity is enabled.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images are stored
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Content collections you can edit from /admin
+collections:
+
+  # Blog posts
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string", default: "Clifford Amissah"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Excerpt (short summary)", name: "excerpt", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  # Projects / Case Studies
+  - name: "projects"
+    label: "Projects & Case Studies"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Segment", name: "segment", widget: "select", options: ["Residential", "Commercial", "Corporate", "Off-Grid"]}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "System Size", name: "size", widget: "string", hint: "e.g., 5 kWp + 10 kWh storage"}
+      - {label: "Client Name", name: "client", widget: "string", required: false}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  # Team members
+  - name: "team"
+    label: "Team Members"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Full Name", name: "name", widget: "string"}
+      - {label: "Job Title", name: "title", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Biography", name: "bio", widget: "markdown"}
+      - {label: "Display Order", name: "order", widget: "number", default: 1, hint: "Lower numbers show first"}
+
+  # Press releases & news
+  - name: "press"
+    label: "Press & News"
+    folder: "content/press"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Source", name: "source", widget: "string", required: false, hint: "e.g., 'Business Ghana', 'Press Release'"}
+      - {label: "External Link", name: "url", widget: "string", required: false}
+      - {label: "Summary", name: "body", widget: "markdown"}
+
+  # Downloadable resources (PDFs, brochures)
+  - name: "downloads"
+    label: "Downloadable Resources"
+    folder: "content/downloads"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "File (PDF)", name: "file", widget: "file"}
+      - {label: "Category", name: "category", widget: "select", options: ["Company Profile", "Product Brochure", "Case Study", "Whitepaper", "Other"]}

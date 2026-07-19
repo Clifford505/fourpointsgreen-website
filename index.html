@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Four Points Green Power — Solar Energy & Green Power in Ghana</title>
+  <meta name="description" content="Engineered solar energy and green power systems for homes, businesses, and communities across Ghana. Let the sun pay the bills.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1A2240;
+      --ink-soft: #2A3454;
+      --gold: #F5B800;
+      --burnt: #8B3A1E;
+      --amber: #B8731E;
+      --sand: #F2E6CE;
+      --parchment: #FAF5E6;
+      --stone: #B8AFA1;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--ink);
+      background: var(--ink);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { max-width: 100%; display: block; }
+    button, input, select, textarea { font-family: inherit; font-size: inherit; }
+    ::selection { background: var(--gold); color: var(--ink); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    @media (min-width: 1024px) { .container { padding: 0 40px; } }
+
+    .italic { font-family: 'Fraunces', Georgia, serif; font-style: italic; letter-spacing: -0.02em; }
+    .kicker { font-size: 11px; letter-spacing: 0.3em; font-weight: 500; text-transform: uppercase; }
+
+    /* ==================== NAV ==================== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: all 0.3s ease;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(26, 34, 64, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(245, 184, 0, 0.13);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1200px; margin: 0 auto;
+    }
+    @media (min-width: 1024px) { .nav-inner { padding: 16px 40px; } }
+    .nav-brand { display: flex; align-items: center; gap: 14px; }
+    .nav-brand-text { line-height: 0.95; }
+    .nav-brand-text .fp { color: white; font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 22px; letter-spacing: 0.01em; display: block; }
+    .nav-brand-text .gp { color: var(--gold); font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 22px; letter-spacing: 0.01em; display: block; }
+    .nav-links { display: none; align-items: center; gap: 36px; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { color: rgba(255,255,255,0.8); font-size: 13px; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover { color: white; }
+    .nav-cta {
+      background: var(--gold); color: var(--ink) !important;
+      padding: 10px 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.05em;
+      border-radius: 2px; transition: filter 0.2s;
+    }
+    .nav-cta:hover { filter: brightness(1.1); }
+    .nav-toggle { display: block; background: none; border: none; color: white; cursor: pointer; padding: 8px; }
+    @media (min-width: 1024px) { .nav-toggle { display: none; } }
+    .mobile-menu {
+      display: none; background: var(--ink);
+      border-top: 1px solid rgba(245, 184, 0, 0.13);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu-inner { padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .mobile-menu a { color: rgba(255,255,255,0.8); padding: 8px 0; font-size: 14px; letter-spacing: 0.05em; }
+    .mobile-menu .nav-cta { text-align: center; margin-top: 8px; padding: 14px 20px; font-size: 13px; }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative; min-height: 100vh; overflow: hidden;
+      display: flex; align-items: center;
+      background: var(--ink); padding: 128px 0 100px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .hero-bg svg { width: 900px; max-width: 130vw; height: auto; opacity: 0.7; }
+    .hero-content { position: relative; z-index: 10; max-width: 900px; }
+    .hero-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .hero-kicker .line { height: 1px; width: 48px; background: var(--gold); }
+    .hero-kicker span { color: var(--gold); }
+    .hero-title {
+      color: white; font-family: 'Fraunces', Georgia, serif; font-style: italic;
+      font-weight: 500; font-size: clamp(3rem, 9vw, 8rem); line-height: 0.95;
+      letter-spacing: -0.03em; margin-bottom: 32px;
+    }
+    .hero-title .gold { color: var(--gold); }
+    .hero-sub {
+      color: rgba(255,255,255,0.7); font-size: 18px; max-width: 640px;
+      margin-bottom: 48px; line-height: 1.6; text-align: justify;
+    }
+    @media (min-width: 1024px) { .hero-sub { font-size: 20px; } }
+    .hero-ctas { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+    @media (min-width: 640px) { .hero-ctas { flex-direction: row; align-items: center; } }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 32px; background: var(--gold); color: var(--ink) !important;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      border-radius: 2px; border: none; cursor: pointer; transition: filter 0.2s;
+    }
+    .btn-primary:hover { filter: brightness(1.1); }
+    .btn-primary svg { transition: transform 0.2s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+    .btn-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 16px 8px; color: rgba(255,255,255,0.8) !important;
+      font-size: 13px; font-weight: 500; letter-spacing: 0.1em;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.2s;
+    }
+    .btn-link:hover { color: white !important; border-bottom-color: rgba(255,255,255,0.6); }
+
+    .hero-strip {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      border-top: 1px solid rgba(245, 184, 0, 0.2);
+      background: var(--ink);
+    }
+    .hero-strip-inner {
+      max-width: 1200px; margin: 0 auto; padding: 24px 24px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+      font-size: 11px; letter-spacing: 0.2em; color: rgba(255,255,255,0.6);
+    }
+    @media (min-width: 1024px) { .hero-strip-inner { padding: 24px 40px; } }
+    .hero-strip-segments { display: flex; align-items: center; gap: 24px; color: rgba(255,255,255,0.5); }
+    .hero-strip-segments .dot { color: var(--gold); }
+
+    /* ==================== SECTIONS ==================== */
+    section { padding: 96px 0; }
+    @media (min-width: 1024px) { section { padding: 128px 0; } }
+
+    .sec-sand { background: var(--sand); color: var(--ink); }
+    .sec-ink { background: var(--ink); color: white; }
+
+    .sec-kicker { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .sec-title {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic;
+      font-weight: 500; letter-spacing: -0.02em; line-height: 1.05;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+    }
+    .sec-title.small { font-size: clamp(2rem, 4vw, 3rem); }
+
+    /* ==================== ABOUT ==================== */
+    .about-grid { display: grid; gap: 48px; }
+    @media (min-width: 1024px) {
+      .about-grid { grid-template-columns: 5fr 7fr; gap: 64px; }
+    }
+    .about-right { padding-top: 0; }
+    @media (min-width: 1024px) { .about-right { padding-top: 64px; } }
+    .about-right p { margin-bottom: 24px; font-size: 16px; line-height: 1.7; text-align: justify; }
+    @media (min-width: 1024px) { .about-right p { font-size: 18px; } }
+    .about-brand-line {
+      display: flex; align-items: center; gap: 16px;
+      padding-top: 16px; margin-top: 32px;
+      border-top: 1px solid rgba(26, 34, 64, 0.13);
+      font-size: 14px; font-weight: 500;
+    }
+    .stats {
+      margin-top: 48px; padding-top: 32px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      border-top: 1px solid rgba(26, 34, 64, 0.13);
+    }
+    .stat-kicker { font-size: 11px; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 4px; }
+    .stat-value {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 500;
+      font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; color: var(--burnt); margin-bottom: 4px;
+    }
+    .stat-label { font-size: 14px; opacity: 0.7; }
+
+    /* ==================== SERVICES ==================== */
+    .services-header { display: grid; gap: 32px; margin-bottom: 64px; }
+    @media (min-width: 1024px) {
+      .services-header { grid-template-columns: 4fr 7fr; }
+      .services-header > div:last-child { padding-top: 64px; grid-column: 2 / 3; margin-left: 60px; }
+    }
+    .services-intro { color: rgba(255,255,255,0.7); font-size: 18px; line-height: 1.7; text-align: justify; }
+
+    .services-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1px;
+      background: rgba(245, 184, 0, 0.13);
+    }
+    @media (min-width: 768px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .service-card {
+      padding: 32px; background: var(--ink); cursor: pointer;
+      transition: filter 0.2s; position: relative;
+    }
+    @media (min-width: 1024px) { .service-card { padding: 40px; } }
+    .service-card:hover { filter: brightness(1.25); }
+    .service-card-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .service-letter {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic;
+      font-weight: 500; font-size: 64px; line-height: 1; color: var(--gold);
+    }
+    .service-icon { color: var(--gold); opacity: 0.7; }
+    .service-title-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .service-title { color: white; font-size: 20px; font-weight: 700; }
+    .badge {
+      padding: 2px 8px; background: var(--burnt); color: var(--sand);
+      font-size: 10px; letter-spacing: 0.1em; font-weight: 700; border-radius: 2px;
+    }
+    .service-body { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; text-align: justify; }
+    .service-cta {
+      margin-top: 24px; display: flex; align-items: center; gap: 8px;
+      color: var(--gold); font-size: 11px; letter-spacing: 0.1em;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .service-card:hover .service-cta { opacity: 1; }
+
+    /* ==================== SEGMENTS ==================== */
+    .segments-header { text-align: center; max-width: 720px; margin: 0 auto 64px; }
+    .segments-header .sec-kicker { justify-content: center; }
+    .segments-header .sec-kicker .line { height: 1px; width: 32px; background: var(--burnt); }
+    .segments-header p { margin-top: 24px; font-size: 16px; opacity: 0.75; line-height: 1.7; text-align: justify; }
+    @media (min-width: 1024px) { .segments-header p { font-size: 18px; } }
+
+    .segments-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .segments-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .segments-grid { grid-template-columns: repeat(4, 1fr); } }
+    .segment-card {
+      padding: 32px; background: var(--parchment);
+      border: 1px solid rgba(26, 34, 64, 0.09); transition: box-shadow 0.2s;
+    }
+    .segment-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+    .segment-icon-box {
+      width: 56px; height: 56px; background: var(--ink); border-radius: 2px;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: var(--gold); margin-bottom: 24px;
+    }
+    .segment-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+    .segment-body { font-size: 14px; opacity: 0.75; line-height: 1.6; text-align: justify; }
+
+    /* ==================== PROCESS ==================== */
+    .process-header { max-width: 720px; margin-bottom: 64px; }
+    .process-header .kicker { color: var(--gold); margin-bottom: 24px; }
+    .process-header p { color: rgba(255,255,255,0.7); font-size: 18px; margin-top: 24px; text-align: justify; max-width: 720px; }
+    .process-grid {
+      position: relative;
+      display: grid; grid-template-columns: 1fr; gap: 32px;
+    }
+    @media (min-width: 1024px) {
+      .process-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
+      .process-line {
+        position: absolute; top: 32px; left: 32px; right: 32px; height: 1px;
+        background: rgba(245, 184, 0, 0.27); z-index: 0;
+      }
+    }
+    .process-step { position: relative; }
+    .process-num {
+      position: relative; z-index: 10;
+      width: 64px; height: 64px;
+      background: var(--ink); border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-weight: 700; font-size: 18px; margin-bottom: 24px;
+    }
+    .process-step h3 { color: white; font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .process-step p { color: rgba(255,255,255,0.6); font-size: 14px; line-height: 1.6; text-align: justify; }
+
+    /* ==================== WHY US ==================== */
+    .whyus-grid { display: grid; gap: 48px; }
+    @media (min-width: 1024px) { .whyus-grid { grid-template-columns: 4fr 8fr; } }
+    .whyus-left { }
+    .whyus-left .sec-kicker span { color: var(--burnt); }
+    .whyus-left .divider {
+      padding-top: 24px; margin-top: 32px;
+      border-top: 1px solid rgba(26, 34, 64, 0.13);
+    }
+    .whyus-list { background: rgba(26, 34, 64, 0.13); display: grid; gap: 1px; }
+    .whyus-item { padding: 24px; background: var(--sand); display: flex; gap: 24px; }
+    @media (min-width: 1024px) { .whyus-item { padding: 32px; } }
+    .whyus-num { font-size: 11px; font-weight: 700; color: var(--gold); padding-top: 4px; letter-spacing: 0.05em; }
+    .whyus-item h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .whyus-item p { font-size: 14px; opacity: 0.75; line-height: 1.6; text-align: justify; }
+
+    /* ==================== PROJECTS ==================== */
+    .projects-header {
+      display: flex; flex-wrap: wrap; align-items: flex-end;
+      justify-content: space-between; gap: 32px; margin-bottom: 64px;
+    }
+    .projects-header .kicker { color: var(--gold); margin-bottom: 24px; }
+    .projects-header p {
+      max-width: 400px; color: rgba(255,255,255,0.6);
+      font-size: 16px; line-height: 1.6; text-align: justify;
+    }
+    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+    .project-card {
+      background: var(--ink-soft); border: 1px solid rgba(245, 184, 0, 0.13);
+      padding: 32px; aspect-ratio: 4/5;
+      display: flex; flex-direction: column; justify-content: space-between;
+      cursor: pointer; transition: filter 0.2s;
+    }
+    .project-card:hover { filter: brightness(1.25); }
+    .project-kicker { color: var(--gold); font-size: 11px; letter-spacing: 0.2em; margin-bottom: 24px; }
+    .project-title {
+      color: white; font-family: 'Fraunces', Georgia, serif; font-style: italic;
+      font-weight: 500; font-size: 28px; line-height: 1.2; letter-spacing: -0.01em;
+      margin-bottom: 16px;
+    }
+    .project-meta {
+      display: flex; justify-content: space-between; padding-top: 24px;
+      border-top: 1px solid rgba(245, 184, 0, 0.13);
+      font-size: 14px; color: rgba(255,255,255,0.7);
+    }
+    .project-meta .field-label { font-size: 11px; opacity: 0.6; margin-bottom: 4px; letter-spacing: 0.05em; }
+    .project-read {
+      margin-top: 24px; display: flex; align-items: center; gap: 8px;
+      color: var(--gold); font-size: 11px; letter-spacing: 0.1em;
+      transition: gap 0.2s;
+    }
+    .project-card:hover .project-read { gap: 16px; }
+
+    /* ==================== CONTACT ==================== */
+    .contact-grid { display: grid; gap: 48px; }
+    @media (min-width: 1024px) { .contact-grid { grid-template-columns: 5fr 7fr; gap: 64px; } }
+    .contact-left .sec-kicker span { color: var(--burnt); }
+    .contact-left > p {
+      font-size: 16px; opacity: 0.75; line-height: 1.7; margin-bottom: 40px; text-align: justify;
+    }
+    @media (min-width: 1024px) { .contact-left > p { font-size: 18px; } }
+
+    .contact-list { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 16px; }
+    .contact-item-icon {
+      flex-shrink: 0; width: 40px; height: 40px; background: var(--ink);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); border-radius: 2px; margin-top: 4px;
+    }
+    .contact-item-label { font-size: 11px; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 4px; }
+    .contact-item-value { font-size: 15px; }
+
+    .contact-form-wrap {
+      background: var(--ink); padding: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    @media (min-width: 1024px) { .contact-form-wrap { padding: 40px; } }
+    .contact-form-header {
+      display: flex; align-items: center; gap: 16px;
+      padding-bottom: 24px; margin-bottom: 32px;
+      border-bottom: 1px solid rgba(245, 184, 0, 0.2);
+    }
+    .contact-form-header-kicker { font-size: 11px; letter-spacing: 0.2em; color: var(--gold); }
+    .contact-form-header-title { color: white; font-size: 18px; margin-top: 4px; }
+
+    .form-row { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .form-row.two { grid-template-columns: 1fr 1fr; } }
+    .form-field { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 11px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 8px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 12px 16px; color: white;
+      background: transparent; border: 1px solid rgba(245, 184, 0, 0.27);
+      border-radius: 2px; transition: border-color 0.2s;
+    }
+    .form-select { background: var(--ink); }
+    .form-textarea { resize: none; min-height: 100px; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none; border-color: var(--gold);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.4); }
+
+    .form-submit {
+      width: 100%; padding: 16px; background: var(--gold); color: var(--ink);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      border: none; border-radius: 2px; cursor: pointer; transition: filter 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 8px;
+    }
+    .form-submit:hover { filter: brightness(1.1); }
+    .form-note { text-align: center; font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 12px; }
+
+    /* ==================== FOOTER ==================== */
+    footer { padding: 64px 0; background: var(--ink); border-top: 1px solid rgba(245, 184, 0, 0.13); }
+    .footer-grid { display: grid; gap: 32px; margin-bottom: 48px; }
+    @media (min-width: 1024px) { .footer-grid { grid-template-columns: 5fr 3fr 4fr; } }
+    .footer-tagline {
+      font-family: 'Fraunces', Georgia, serif; font-style: italic;
+      font-size: 20px; color: var(--gold); letter-spacing: -0.01em;
+      margin-top: 24px;
+    }
+    .footer-heading {
+      font-size: 11px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 16px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a { color: rgba(255,255,255,0.7); font-size: 14px; transition: color 0.2s; }
+    .footer-links a:hover { color: white; }
+    .footer-info { color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.7; }
+    .footer-info + .footer-heading { margin-top: 24px; }
+    .footer-bottom {
+      padding-top: 32px; display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between; gap: 16px;
+      border-top: 1px solid rgba(245, 184, 0, 0.13);
+      color: rgba(255,255,255,0.4); font-size: 11px;
+    }
+    .footer-bottom .right { letter-spacing: 0.2em; }
+
+    /* ==================== ANIMATIONS ==================== */
+    .compass-rays { transform-origin: center; animation: pulse 4s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 0.85; } 50% { opacity: 0.5; } }
+    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s, transform 0.8s; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ==================== NAV ==================== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <svg viewBox="0 0 200 200" width="40" height="40">
+        <g transform="translate(100,100)">
+          <g fill="#F5B800" opacity="0.85" class="compass-rays">
+            <g transform="rotate(22.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(67.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(112.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(157.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(202.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(247.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(292.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+            <g transform="rotate(337.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+          </g>
+          <polygon points="0,-70 14,-14 70,0 14,14 0,70 -14,14 -70,0 -14,-14" fill="#F5B800"/>
+          <polygon points="0,-36 7,-7 36,0 7,7 0,36 -7,7 -36,0 -7,-7" fill="#1A2240"/>
+          <circle r="7" fill="#F5B800"/>
+        </g>
+      </svg>
+      <div class="nav-brand-text">
+        <span class="fp">FOUR POINTS</span>
+        <span class="gp">GREEN POWER</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Book a consultation</a>
+    </div>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#services" onclick="toggleMenu()">Services</a>
+      <a href="#process" onclick="toggleMenu()">Process</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <a href="#contact" class="nav-cta" onclick="toggleMenu()">Book a consultation</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="top" class="hero">
+  <div class="hero-bg">
+    <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#F5B800" stop-opacity="0.15"/>
+          <stop offset="50%" stop-color="#F5B800" stop-opacity="0.03"/>
+          <stop offset="100%" stop-color="#F5B800" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="400" cy="400" r="380" fill="url(#glow)"/>
+      <g transform="translate(400,400)">
+        <g fill="#F5B800" opacity="0.14">
+          <g><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(22.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(45)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(67.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(90)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(112.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(135)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(157.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(180)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(202.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(225)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(247.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(270)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(292.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(315)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+          <g transform="rotate(337.5)"><rect x="-1" y="-340" width="2" height="80" rx="1"/></g>
+        </g>
+        <g fill="#F5B800" opacity="0.4">
+          <g transform="rotate(22.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(67.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(112.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(157.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(202.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(247.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(292.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+          <g transform="rotate(337.5)"><rect x="-3" y="-260" width="6" height="50" rx="3"/></g>
+        </g>
+        <polygon points="0,-200 40,-40 200,0 40,40 0,200 -40,40 -200,0 -40,-40" fill="#F5B800" opacity="0.95"/>
+        <polygon points="0,-104 20,-20 104,0 20,20 0,104 -20,20 -104,0 -20,-20" fill="#1A2240"/>
+        <circle r="20" fill="#F5B800"/>
+      </g>
+    </svg>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-kicker">
+      <div class="line"></div>
+      <span class="kicker">Solar · Green Power · Ghana</span>
+    </div>
+    <h1 class="hero-title">Let the sun<br><span class="gold">pay the bills.</span></h1>
+    <p class="hero-sub">Engineered solar energy and green power systems for homes, businesses, and communities across Ghana. Designed here. Built to last decades.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        BOOK A FREE CONSULTATION
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#services" class="btn-link">
+        SEE OUR SERVICES
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-strip">
+    <div class="hero-strip-inner">
+      <div>FOUR POINTS · GREEN POWER · LTD</div>
+      <div class="hero-strip-segments">
+        <span>RESIDENTIAL</span>
+        <span class="dot">·</span>
+        <span>COMMERCIAL</span>
+        <span class="dot">·</span>
+        <span>CORPORATE</span>
+        <span class="dot">·</span>
+        <span>OFF-GRID</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="sec-sand">
+  <div class="container about-grid">
+    <div>
+      <div class="sec-kicker">
+        <span class="kicker" style="color: var(--burnt);">01 · Who we are</span>
+      </div>
+      <h2 class="sec-title">We turn Ghana's most abundant resource into measurable savings.</h2>
+      <div class="about-brand-line">
+        <svg viewBox="0 0 200 200" width="28" height="28">
+          <g transform="translate(100,100)">
+            <polygon points="0,-70 14,-14 70,0 14,14 0,70 -14,14 -70,0 -14,-14" fill="#F5B800"/>
+            <polygon points="0,-36 7,-7 36,0 7,7 0,36 -7,7 -36,0 -7,-7" fill="#1A2240"/>
+            <circle r="7" fill="#F5B800"/>
+          </g>
+        </svg>
+        <span>Accra · West Africa</span>
+      </div>
+    </div>
+    <div class="about-right">
+      <p>Four Points Green Power is a Ghanaian solar energy and green power company headquartered in Accra. We design, supply, install, and maintain solar systems for residential, commercial, corporate, and off-grid community clients across Ghana.</p>
+      <p>The name speaks to our compass-bearing identity: serving every direction, every segment, and every scale of need with the same standard of care. The <span class="italic" style="color: var(--burnt);">green power</span> is our purpose — transforming how Ghanaians power their lives by harnessing the sun.</p>
+      <div class="stats">
+        <div>
+          <div class="stat-kicker">SERVING</div>
+          <div class="stat-value">4</div>
+          <div class="stat-label">market segments</div>
+        </div>
+        <div>
+          <div class="stat-kicker">ALIGNED WITH</div>
+          <div class="stat-value">4</div>
+          <div class="stat-label">UN SDGs</div>
+        </div>
+        <div>
+          <div class="stat-kicker">DESIGN LIFE</div>
+          <div class="stat-value">25</div>
+          <div class="stat-label">years, minimum</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section id="services" class="sec-ink">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <div class="sec-kicker">
+          <span class="kicker" style="color: var(--gold);">02 · Services</span>
+        </div>
+        <h2 class="sec-title" style="color: white;">Six categories.<br>One standard.</h2>
+      </div>
+      <div>
+        <p class="services-intro">Every Four Points system is engineered for your specific site, load profile, and long-term goals — never pulled from a catalogue. We size, configure, and protect for performance measured in decades, not months.</p>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-top">
+          <div class="service-letter">A</div>
+          <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="service-title-row"><h3 class="service-title">Residential Solar</h3></div>
+        <p class="service-body">Grid-tied, hybrid, and off-grid solar systems designed around your household load, roof, and budget.</p>
+        <div class="service-cta">LEARN MORE
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-top">
+          <div class="service-letter">B</div>
+          <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+        </div>
+        <div class="service-title-row"><h3 class="service-title">Commercial & Industrial</h3></div>
+        <p class="service-body">Rooftop and ground-mounted systems that reduce operating costs and protect against grid outages.</p>
+        <div class="service-cta">LEARN MORE
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-top">
+          <div class="service-letter">C</div>
+          <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="6" y1="10" x2="6" y2="14"/><line x1="10" y1="10" x2="10" y2="14"/><line x1="14" y1="10" x2="14" y2="14"/></svg>
+        </div>
+        <div class="service-title-row"><h3 class="service-title">Energy Storage</h3></div>
+        <p class="service-body">Lithium-ion battery solutions and hybrid inverter configurations for critical loads.</p>
+        <div class="service-cta">LEARN MORE
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-top">
+          <div class="service-letter">D</div>
+          <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <div class="service-title-row"><h3 class="service-title">Off-Grid & Hybrid</h3></div>
+        <p class="service-body">Stand-alone solar and solar-diesel hybrid systems for remote sites and community projects.</p>
+        <div class="service-cta">LEARN MORE
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-top">
+          <div class="service-letter">E</div>
+          <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="service-title-row"><h3 class="service-title">Maintenance & O&M</h3></div>
+        <p class="service-body">Monitoring, performance reporting, and ongoing service so your system delivers value for decades.</p>
+        <div class="service-cta">LEARN MORE
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-top">
+          <div class="service-letter">F</div>
+          <svg class="service-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+        </div>
+        <div class="service-title-row">
+          <h3 class="service-title">EV Infrastructure</h3>
+          <span class="badge">COMING SOON</span>
+        </div>
+        <p class="service-body">Solar-powered EV charging hubs and fleet electrification consulting.</p>
+        <div class="service-cta">LEARN MORE
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHO WE SERVE ==================== -->
+<section class="sec-sand">
+  <div class="container">
+    <div class="segments-header">
+      <div class="sec-kicker">
+        <div class="line"></div>
+        <span class="kicker">03 · Who we serve</span>
+        <div class="line"></div>
+      </div>
+      <h2 class="sec-title small">Every direction of the compass.</h2>
+      <p>The Four Points name reflects our commitment to every segment of the energy market — served with the same engineering-first standard of care.</p>
+    </div>
+    <div class="segments-grid">
+      <div class="segment-card">
+        <div class="segment-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="segment-title">Individual Homes</h3>
+        <p class="segment-body">Homeowners taking control of their electricity bills and gaining energy independence.</p>
+      </div>
+      <div class="segment-card">
+        <div class="segment-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg>
+        </div>
+        <h3 class="segment-title">Commercial Enterprises</h3>
+        <p class="segment-body">SMEs, retailers, healthcare, and services that need consistent, cost-effective power.</p>
+      </div>
+      <div class="segment-card">
+        <div class="segment-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="segment-title">Corporate Organizations</h3>
+        <p class="segment-body">Larger enterprises and corporate campuses with sustainability targets to match.</p>
+      </div>
+      <div class="segment-card">
+        <div class="segment-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="segment-title">Off-Grid Communities</h3>
+        <p class="segment-body">Rural communities and remote facilities where the grid does not reach or is unreliable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROCESS ==================== -->
+<section id="process" class="sec-ink">
+  <div class="container">
+    <div class="process-header">
+      <div class="sec-kicker">
+        <span class="kicker" style="color: var(--gold);">04 · How we work</span>
+      </div>
+      <h2 class="sec-title" style="color: white;">Five steps.<br>Long-term accountability.</h2>
+      <p>A clear, structured process that takes every project from first conversation through decades of performance.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-line"></div>
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Consultation</h3>
+        <p>A free, no-obligation conversation about your power needs, goals, and budget.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Site Assessment</h3>
+        <p>Sunlight exposure, roof or land conditions, and electrical infrastructure — measured and evaluated.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Custom Design</h3>
+        <p>Engineers design a system tailored to your specifics, with a transparent quote and projected savings.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <h3>Installation</h3>
+        <p>Tier-1 components procured; certified team handles civil, electrical, and mounting works.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">05</div>
+        <h3>Support</h3>
+        <p>Ongoing maintenance, monitoring, and technical support for decades of reliable output.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY US ==================== -->
+<section class="sec-sand">
+  <div class="container whyus-grid">
+    <div class="whyus-left">
+      <div class="sec-kicker">
+        <span class="kicker">05 · Why us</span>
+      </div>
+      <h2 class="sec-title small">More than a supplier — a long-term partner.</h2>
+      <div class="divider">
+        <svg viewBox="0 0 200 200" width="32" height="32">
+          <g transform="translate(100,100)">
+            <polygon points="0,-70 14,-14 70,0 14,14 0,70 -14,14 -70,0 -14,-14" fill="#F5B800"/>
+            <polygon points="0,-36 7,-7 36,0 7,7 0,36 -7,7 -36,0 -7,-7" fill="#1A2240"/>
+            <circle r="7" fill="#F5B800"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="whyus-list">
+      <div class="whyus-item">
+        <div class="whyus-num">01</div>
+        <div>
+          <h3>Engineering-first design</h3>
+          <p>Every system engineered for your site, load, and goals — not pulled from a generic catalogue.</p>
+        </div>
+      </div>
+      <div class="whyus-item">
+        <div class="whyus-num">02</div>
+        <div>
+          <h3>Tier-1 components only</h3>
+          <p>Globally recognized manufacturers with proven track records and bankable warranties.</p>
+        </div>
+      </div>
+      <div class="whyus-item">
+        <div class="whyus-num">03</div>
+        <div>
+          <h3>Ghana-based expertise</h3>
+          <p>Local presence means responsive service and accountable relationships for the long haul.</p>
+        </div>
+      </div>
+      <div class="whyus-item">
+        <div class="whyus-num">04</div>
+        <div>
+          <h3>End-to-end capability</h3>
+          <p>Consultation, installation, commissioning, and O&M. One point of accountability throughout.</p>
+        </div>
+      </div>
+      <div class="whyus-item">
+        <div class="whyus-num">05</div>
+        <div>
+          <h3>Standards-aligned</h3>
+          <p>Work to IEC and IEEE standards, and fully compliant with Ghana Energy Commission and EPA.</p>
+        </div>
+      </div>
+      <div class="whyus-item">
+        <div class="whyus-num">06</div>
+        <div>
+          <h3>Transparent value</h3>
+          <p>Honest quotes, clear projections, zero hidden costs. You know exactly what you're paying for.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECTS ==================== -->
+<section id="projects" class="sec-ink">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <div class="sec-kicker">
+          <span class="kicker" style="color: var(--gold);">06 · Selected work</span>
+        </div>
+        <h2 class="sec-title" style="color: white;">Recent projects.</h2>
+      </div>
+      <p>A selection of representative work across our four service segments. Full case studies available on request.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div>
+          <div class="project-kicker">RESIDENTIAL</div>
+          <h3 class="project-title">Rooftop solar for East Legon home</h3>
+        </div>
+        <div>
+          <div class="project-meta">
+            <div>
+              <div class="field-label">LOCATION</div>
+              <div>Accra</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="field-label">SIZE</div>
+              <div>5 kWp + 10 kWh storage</div>
+            </div>
+          </div>
+          <div class="project-read">READ CASE STUDY
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div>
+          <div class="project-kicker">COMMERCIAL</div>
+          <h3 class="project-title">SME rooftop installation</h3>
+        </div>
+        <div>
+          <div class="project-meta">
+            <div>
+              <div class="field-label">LOCATION</div>
+              <div>Tema</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="field-label">SIZE</div>
+              <div>25 kWp system</div>
+            </div>
+          </div>
+          <div class="project-read">READ CASE STUDY
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div>
+          <div class="project-kicker">CORPORATE</div>
+          <h3 class="project-title">Corporate campus deployment</h3>
+        </div>
+        <div>
+          <div class="project-meta">
+            <div>
+              <div class="field-label">LOCATION</div>
+              <div>Kumasi</div>
+            </div>
+            <div style="text-align: right;">
+              <div class="field-label">SIZE</div>
+              <div>Case study forthcoming</div>
+            </div>
+          </div>
+          <div class="project-read">READ CASE STUDY
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="sec-sand">
+  <div class="container contact-grid">
+    <div class="contact-left">
+      <div class="sec-kicker">
+        <span class="kicker">07 · Get in touch</span>
+      </div>
+      <h2 class="sec-title">Start a conversation about your energy future.</h2>
+      <p>Whether you're exploring your first solar system, planning a corporate energy transition, or seeking a delivery partner for a community project — we're ready to help.</p>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">VISIT US</div>
+            <div class="contact-item-value">3rd Floor, Ampomaah House, Roman Ridge — Accra, Ghana</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">CALL</div>
+            <div class="contact-item-value">+233 (0) — — —</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">WHATSAPP</div>
+            <div class="contact-item-value">+233 (0) — — —</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 6.1 6.1.1-5 3.6 1.9 6.2L12 15.5 5.1 19l1.9-6.2-5-3.6 6.1-.1z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">WECHAT</div>
+            <div class="contact-item-value">— — —</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">EMAIL</div>
+            <div class="contact-item-value">hello@fourpointsgreen.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">WEB</div>
+            <div class="contact-item-value">www.fourpointsgreen.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form-wrap">
+        <div class="contact-form-header">
+          <svg viewBox="0 0 200 200" width="40" height="40">
+            <g transform="translate(100,100)">
+              <g fill="#F5B800" opacity="0.85">
+                <g transform="rotate(22.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(67.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(112.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(157.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(202.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(247.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(292.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(337.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+              </g>
+              <polygon points="0,-70 14,-14 70,0 14,14 0,70 -14,14 -70,0 -14,-14" fill="#F5B800"/>
+              <polygon points="0,-36 7,-7 36,0 7,7 0,36 -7,7 -36,0 -7,-7" fill="#1A2240"/>
+              <circle r="7" fill="#F5B800"/>
+            </g>
+          </svg>
+          <div>
+            <div class="contact-form-header-kicker">REQUEST A CONSULTATION</div>
+            <div class="contact-form-header-title">We'll respond within one working day.</div>
+          </div>
+        </div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row two">
+            <div class="form-field">
+              <label class="form-label">FULL NAME</label>
+              <input type="text" class="form-input" placeholder="e.g., Ama Boateng" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label">PHONE</label>
+              <input type="tel" class="form-input" placeholder="+233..." required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label">EMAIL</label>
+            <input type="email" class="form-input" placeholder="you@company.com" required>
+          </div>
+          <div class="form-field">
+            <label class="form-label">I'M INTERESTED IN</label>
+            <select class="form-select">
+              <option>Residential solar</option>
+              <option>Commercial solar</option>
+              <option>Off-grid / community project</option>
+              <option>Maintenance & O&M</option>
+              <option>EV infrastructure</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label class="form-label">TELL US ABOUT YOUR PROJECT</label>
+            <textarea class="form-textarea" placeholder="A few lines about your location, current setup, and what you're hoping to achieve..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            REQUEST CONSULTATION
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <div class="form-note">We respect your data. Details shared with us stay with us.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="nav-brand" style="align-items: center;">
+          <svg viewBox="0 0 200 200" width="44" height="44">
+            <g transform="translate(100,100)">
+              <g fill="#F5B800" opacity="0.85">
+                <g transform="rotate(22.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(67.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(112.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(157.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(202.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(247.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(292.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+                <g transform="rotate(337.5)"><rect x="-1.5" y="-92" width="3" height="18" rx="1.5"/></g>
+              </g>
+              <polygon points="0,-70 14,-14 70,0 14,14 0,70 -14,14 -70,0 -14,-14" fill="#F5B800"/>
+              <polygon points="0,-36 7,-7 36,0 7,7 0,36 -7,7 -36,0 -7,-7" fill="#1A2240"/>
+              <circle r="7" fill="#F5B800"/>
+            </g>
+          </svg>
+          <div class="nav-brand-text">
+            <span class="fp" style="font-size: 26px;">FOUR POINTS</span>
+            <span class="gp" style="font-size: 26px;">GREEN POWER</span>
+          </div>
+        </a>
+        <p class="footer-tagline">Let the sun pay the bills.</p>
+      </div>
+      <div>
+        <div class="footer-heading">EXPLORE</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">VISIT</div>
+        <div class="footer-info">3rd Floor, Ampomaah House<br>Roman Ridge<br>Accra, Ghana</div>
+        <div class="footer-heading">CONTACT</div>
+        <div class="footer-info">hello@fourpointsgreen.com<br>www.fourpointsgreen.com</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="year"></span> Four Points Green Power Ltd. All rights reserved.</div>
+      <div class="right">ACCRA · GHANA · WEST AFRICA</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    menu.classList.toggle('open');
+    if (menu.classList.contains('open')) {
+      menuIcon.style.display = 'none';
+      closeIcon.style.display = 'block';
+    } else {
+      menuIcon.style.display = 'block';
+      closeIcon.style.display = 'none';
+    }
+  }
+
+  // Form submit (prototype)
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('This is a design prototype. Form submission will be wired up when the site goes live — we recommend either an email service (like FormSpree or Netlify Forms) or a direct WhatsApp link.');
+  }
+
+  // Set current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+
+</body>
+</html>
